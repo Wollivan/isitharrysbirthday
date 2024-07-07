@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="theres nothing here">
+  <title>is it harrys birthday?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <button>is it harrys birthday?</button>
+  <span></span>
+
+  <!-- what did you expect to find here? -->
+
+  <script>
+    // what you think you're clever for looking in the code?
+    const isToday = (someDate) => {
+      const today = new Date()
+      return someDate.getDate() == today.getDate() &&
+        someDate.getMonth() == today.getMonth() &&
+        someDate.getFullYear() == today.getFullYear()
+    }
+    function check() {
+      const today = isToday(new Date())
+
+      if (today) {
+        document.querySelector("span").textContent = "it is harrys birthday"
+      } else {
+        document.querySelector("span").textContent = "it is not harrys birthday"
+      }
+      document.querySelector("button").remove()
+    }
+
+
+    document.querySelector("button").addEventListener("click", check)
+    console.log("why are you looking here you naughty little boy harry")
+  </script>
+
+</body>
+
+</html>
