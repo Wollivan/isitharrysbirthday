@@ -23,26 +23,24 @@
   <!-- what did you expect to find here? -->
 
   <script>
+    const btn = document.querySelector("button")
+    const span = document.querySelector("span")
     // what you think you're clever for looking in the code?
-    const isToday = (someDate) => {
-      const today = new Date()
-      return someDate.getDate() == today.getDate() &&
-        someDate.getMonth() == today.getMonth() &&
-        someDate.getFullYear() == today.getFullYear()
-    }
+
     function check() {
-      const today = isToday(new Date())
+      let today = new Date();
+      let formatted = today.getDate() + "/" + today.getMonth() // remember mnth is -1 and dumb dumb
 
-      if (today) {
-        document.querySelector("span").textContent = "it is harrys birthday"
+      if (formatted === "7/6") {
+        span.textContent = "it is harrys birthday"
       } else {
-        document.querySelector("span").textContent = "it is not harrys birthday"
+        span.textContent = "it is not harrys birthday"
       }
-      document.querySelector("button").remove()
+      btn.remove()
     }
 
 
-    document.querySelector("button").addEventListener("click", check)
+    btn.addEventListener("click", check)
     console.log("why are you looking here you naughty little boy harry")
   </script>
 
